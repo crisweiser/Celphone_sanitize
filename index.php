@@ -8,6 +8,10 @@
 *
 */
 
+/* Config */
+$input = "list.txt";
+$output = "ok_list.txt";
+
 function clean($string) {
    $string = trim($string); //removes whitespaces from beginning and ending
    $string = str_replace(' ', '', $string); // remove whitespace anywhere else
@@ -55,7 +59,7 @@ function sanitize($number) {
 	$number = fixlen($number);
     if(strlen($number) > 1) { 
 		//save new list
-	    $myFile = "ok_list.txt";
+	    $myFile = $output;
 		$fh = fopen($myFile, 'a') or die("can't open file");
 		$stringData = $number . "\r\n";
 		//echo $stringData . "<br />"; debug purposes.. no need to print.
@@ -71,7 +75,7 @@ function sanitize($number) {
 */
 
 
-$file = fopen("list.txt", "r");
+$file = fopen($input, "r");
 $members = array();
 	while (!feof($file)) {
 	   $members[] = fgets($file);
