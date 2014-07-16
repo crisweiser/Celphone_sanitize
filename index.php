@@ -70,8 +70,7 @@ function sanitize($number) {
 
 /*
 *
-* Starting operational loop trough list.txt
-*
+* Starting operational loop trough output file
 */
 
 
@@ -92,6 +91,6 @@ foreach ($members as $member) {
 }
 
 if($erro > 0) { echo "We had $erro numbers with error that could not be fixed. "; }
-echo "Sucessfull Work. $total_linhas celphones cleared. <a href='ok_list.txt'>Click here to check results</a>";
+echo "Sucessfull Work. $total_linhas celphones cleared. <a href='$output'>Click here to check results</a>";
 
 
